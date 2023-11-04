@@ -4,7 +4,13 @@
 
 
 
-$(function () {
+$(document).ready(function (){
+
+  var currentDay = dayjs().format("dddd, MMMM D, YYYY");
+
+  // Set the current date in the header
+  $("#currentDay").text(currentDay);
+
   
     // Add a click event listener to all save buttons
     $(".saveBtn").on("click", function() {
@@ -18,22 +24,41 @@ $(function () {
       localStorage.setItem(timeBlockId, userInput);
     });
   
-  
- // HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
-});
+  // Get the current hour using Day.js (or any date/time library of your choice)
+  var currentHour = dayjs().hour();
 
+  // Iterate through each time block
+  $(".time-block").each(function () {
+    var timeBlockHour = parseInt($(this).attr("id").split("-")[1]);
+
+    // Apply the appropriate class based on the comparison
+    if (timeBlockHour < currentHour) {
+      $(this).addClass("past");
+    } else if (timeBlockHour === currentHour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
+    }
+   
+    // Add a click event listener to the save button
+  $(".saveBtn").on("click", function () {
+    // Get the id from the parent time-block element
+    var timeBlockId = $(this).closest(".time-block").attr("id");
+    // Get the user input from the textarea
+    var userInput = $(this).siblings(".description").val();
+
+    // Save the user input to local storage with the timeBlockId as the key
+    localStorage.setItem(timeBlockId, userInput);
+  });
+
+  // Retrieve user input from local storage and set textarea values
+  $(".time-block").each(function () {
+    var timeBlockId = $(this).attr("id");
+    var savedInput = localStorage.getItem(timeBlockId);
+    if (savedInput !== null) {
+      $(this).find(".description").val(savedInput);
+    }
+  });
+  
+  
+})

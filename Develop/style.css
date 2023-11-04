@@ -1,8 +1,17 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background-color: azure;
 }
 
+header {
+flex-direction: center ;
+}
+
+.display-3 {
+  font-size: 4rem;
+  display: center;
+}
 textarea {
   background: transparent;
   border: none;
@@ -51,7 +60,9 @@ textarea {
 .saveBtn {
   background-color: #06aed5;
   color: #fff;
-  border: none;
+  border: solid 2px;
+  border-radius: 3px;
+  border-color: #000;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 10px;

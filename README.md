@@ -72,7 +72,14 @@ This project is maintained by Stas-Cell-Max.
 
 ## References
 
+<<<<<<< HEAD
 jhghj
+=======
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
+https://www.w3schools.com/js/js_events.asp
+https://www.geeksforgeeks.org/javascript/?ref=gcse
+
+>>>>>>> 7c32c9b62d8b8564ecf6dd3f751802f1b226d4d3
 
 ## Deployment
 

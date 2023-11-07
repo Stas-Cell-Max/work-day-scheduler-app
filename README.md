@@ -72,8 +72,9 @@ This project is maintained by Stas-Cell-Max.
 
 ## References
 
-<<<<<<< HEAD
-jhghj
+Ozdal Dogru
+Harry
+Julio Guzman
 =======
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
 https://www.w3schools.com/js/js_events.asp

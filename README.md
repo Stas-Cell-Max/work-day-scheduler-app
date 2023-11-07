@@ -83,4 +83,7 @@ https://www.geeksforgeeks.org/javascript/?ref=gcse
 
 ## Deployment
 
-bgc
+[bgc](https://stas-cell-max.github.io/work-day-scheduler-app/)https://stas-cell-max.github.io/work-day-scheduler-app/
+
+![Capturesdf](https://github.com/Stas-Cell-Max/work-day-scheduler-app/assets/137020431/11e9b5c1-415d-4d44-96b7-c169d2f3b3c0)
+
